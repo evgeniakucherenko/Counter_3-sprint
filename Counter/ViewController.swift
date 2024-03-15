@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var historyText: UITextView!
     
     override func viewDidLoad() {
-            super.viewDidLoad()
+        super.viewDidLoad()
         buttonDecrease.backgroundColor = .buttonDecrease
         buttonDecrease.frame.size.width = 100
         buttonDecrease.frame.size.height = 100
@@ -32,14 +32,14 @@ class ViewController: UIViewController {
         
         buttonReset.backgroundColor = .systemGray6
         buttonReset.layer.cornerRadius = 20
-        }
+    }
     
     //This function formats the date
-        func returnFormatedDate(date: Date) -> String {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd.MM.yyyy, HH:mm:ss"
-            return dateFormatter.string(from: date)
-        }
+    func returnFormatedDate(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy, HH:mm:ss"
+        return dateFormatter.string(from: date)
+    }
     
     var count = 0
     
@@ -53,11 +53,11 @@ class ViewController: UIViewController {
     // Here I work with the decrease value button
     @IBAction func changeButtonDecrease(_ sender: Any) {
         if count == 0 {
-        historyText.text += "\(returnFormatedDate(date: Date())): попытка уменьшить значение счётчика ниже 0\n"
+            historyText.text += "\(returnFormatedDate(date: Date())): попытка уменьшить значение счётчика ниже 0\n"
         } else {
-        count -= 1
-        labelCounter.text = "\(count)"
-        historyText.text += "\(returnFormatedDate(date: Date())): значение изменено на -1\n"
+            count -= 1
+            labelCounter.text = "\(count)"
+            historyText.text += "\(returnFormatedDate(date: Date())): значение изменено на -1\n"
         }
     }
     
